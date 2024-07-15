@@ -17,7 +17,7 @@ const SignupScreen = () => {
 
   const handleSignup = async () => {
     try {
-      const response = await fetch('http://192.168.1.49:3000/auth/signup', {
+      const response = await fetch('http://192.168.1.50:3000/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const SignupScreen = () => {
       const data = await response.json();
       console.log(data); // Log success message or handle navigation as needed
       navigation.navigate(routes.LOGIN_SCREEN); // Navigate to login screen after successful signup
-    } catch (error) {
+    } catch (error :any ) {
       console.error('Error signing up:', error.message);
       Alert.alert('Signup Failed', 'Please check your credentials and try again.');
     }

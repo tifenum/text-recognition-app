@@ -29,15 +29,15 @@ const HomeScreen = () => {
   };
 
   const handleButton3Press = async () => {
-    navigation.navigate(routes.SELECT_SCREEN); // Navigate to login screen after successful account creation
+    navigation.navigate(routes.FACTURE_SCREEN); // Navigate to login screen after successful account creation
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
-        <Button title="Button 1" onPress={handleButton1Press} />
-        <Button title="Button 2" onPress={handleButton2Press} />
-        <Button title="Button 3" onPress={handleButton3Press} />
+        <Button title="Transactions" onPress={handleButton1Press} />
+        <Button title="Create Account" onPress={handleButton2Press} />
+        <Button title="Consult your factures" onPress={handleButton3Press} />
       </View>
     </View>
   );

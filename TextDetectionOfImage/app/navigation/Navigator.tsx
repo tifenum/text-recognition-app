@@ -10,8 +10,11 @@ import {RouteProp} from '@react-navigation/native';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
 import CreateAccountScreen from '../screens/CreateAccountScreen';
-import transactionSceen from '../screens/transaction';
+import transactionSceen from '../screens/Transaction';
 import HomeScreen from '../screens/homeScreen';
+import RetraitScreen from '../screens/RetraitSreen';
+import FactureScreen from '../screens/FactureScreen';
+import PayScreen from '../screens/PaySeeen';
 
 export type RootStackParamList = {
   [routes.SELECT_SCREEN]: undefined;
@@ -23,6 +26,11 @@ export type RootStackParamList = {
   [routes.CREATE_ACCOUNT_SCREEN]: undefined;
   [routes.TRANSACTION_SCREEN]: undefined;
   [routes.HOME_SCREEN]: undefined;
+  [routes.RETRAIT_SCREEN]: undefined;
+  [routes.VERSEMENT_SCREEN]: undefined;
+  [routes.VIRREMENT_SCREEN]: undefined;
+  [routes.FACTURE_SCREEN]: undefined;
+  [routes.PAY_SCREEN]: undefined;
 };
 
 
@@ -53,6 +61,7 @@ export const Navigator = () => {
       }}>
       <Stack.Screen name={routes.LOGIN_SCREEN} component={LoginScreen} />
       <Stack.Screen name={routes.SIGNUP_SCREEN} component={SignupScreen} />
+
       <Stack.Screen
         name={routes.SELECT_SCREEN}
         component={SelectImageScreen}
@@ -60,6 +69,11 @@ export const Navigator = () => {
       <Stack.Screen name={routes.CREATE_ACCOUNT_SCREEN} component={CreateAccountScreen}></Stack.Screen>
       <Stack.Screen name={routes.TRANSACTION_SCREEN} component={transactionSceen}></Stack.Screen>
       <Stack.Screen name={routes.HOME_SCREEN} component={HomeScreen}></Stack.Screen>
+      <Stack.Screen name={routes.RETRAIT_SCREEN} component={RetraitScreen}></Stack.Screen>
+      <Stack.Screen name={routes.VERSEMENT_SCREEN} component={RetraitScreen}></Stack.Screen>
+      <Stack.Screen name={routes.VIRREMENT_SCREEN} component={RetraitScreen}></Stack.Screen>
+      <Stack.Screen name={routes.FACTURE_SCREEN} component={FactureScreen}></Stack.Screen>
+      <Stack.Screen name={routes.PAY_SCREEN} component={PayScreen}></Stack.Screen>
       <Stack.Screen
         name={routes.PROCESS_IMAGE_SCREEN}
         component={ProcessImageScreen}

@@ -19,7 +19,7 @@ const LoginScreen = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://192.168.1.49:3000/auth/login', {
+      const response = await axios.post('http://192.168.1.50:3000/auth/login', {
         email,
         password,
       });

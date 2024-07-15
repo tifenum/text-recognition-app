@@ -7,38 +7,31 @@ import * as routes from '../navigation/routes';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // Import AsyncStorage
 
-type TransactionScreenNavigationProps = StackNavigationProp<
+type FactureScreenNavigationProps = StackNavigationProp<
   RootStackParamList,
-  typeof routes.TRANSACTION_SCREEN
+  typeof routes.FACTURE_SCREEN
 >;
 
-const TransactionScreen = () => {
-  const navigation = useNavigation<TransactionScreenNavigationProps>();
+const FactureScreen = () => {
+  const navigation = useNavigation<FactureScreenNavigationProps>();
 
-  const handleRetraitPress = () => {
-    // Function for "Retrait" button
-    // Implement your logic here
-    navigation.navigate(routes.RETRAIT_SCREEN); // Navigate to login screen after successful account creation
-  };
-
-  const handleVirementPress = () => {
+  const handlePayPress = () => {
     // Function for "Virement" button
-    navigation.navigate(routes.VIRREMENT_SCREEN); // Navigate to login screen after successful account creation  
+    navigation.navigate(routes.PAY_SCREEN); // Navigate to login screen after successful account creation  
     // Implement your logic here
   };
 
-  const handleVersementPress = () => {
+  const handleScanPress = () => {
     // Function for "Versement" button
-    navigation.navigate(routes.VERSEMENT_SCREEN); // Navigate to login screen after successful account creation
+    navigation.navigate(routes.SELECT_SCREEN); // Navigate to login screen after successful account creation  
     // Implement your logic here
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
-        <Button title="Retrait" onPress={handleRetraitPress} />
-        <Button title="Virement" onPress={handleVirementPress} />
-        <Button title="Versement" onPress={handleVersementPress} />
+        <Button title="Scan & Upload ur facture" onPress={handleScanPress} />
+        <Button title="Pay ur facture" onPress={handlePayPress} />
       </View>
     </View>
   );
@@ -63,4 +56,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TransactionScreen;
+export default FactureScreen;

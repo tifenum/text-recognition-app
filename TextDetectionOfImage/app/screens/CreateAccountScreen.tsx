@@ -25,7 +25,7 @@ const CreateAccountScreen = () => {
       }
 
       const response = await axios.post(
-        'http://192.168.1.49:3000/auth/addaccount',
+        'http://192.168.1.50:3000/auth/addaccount',
         {
           accountName,
           initialBalance,
