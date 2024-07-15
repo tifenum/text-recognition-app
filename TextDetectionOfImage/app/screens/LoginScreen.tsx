@@ -29,11 +29,11 @@ const LoginScreen = () => {
 
         // Save token to AsyncStorage
         await AsyncStorage.setItem('token', token);
-        navigation.navigate(routes.CREATE_ACCOUNT_SCREEN); // Navigate to SelectImageScreen on success
+        navigation.navigate(routes.HOME_SCREEN); // Navigate to SelectImageScreen on success
       } else {
         Alert.alert('Invalid credentials. Please try again.');
       }
-    } catch (error) {
+    } catch (error :any) {
       console.error('Error logging in:', error.message);
       Alert.alert('Login failed. Please try again.');
     }

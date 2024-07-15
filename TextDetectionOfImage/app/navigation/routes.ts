@@ -3,3 +3,5 @@ export const PROCESS_IMAGE_SCREEN = 'Process image';
 export const LOGIN_SCREEN = 'Login';
 export const SIGNUP_SCREEN = 'Signup';
 export const CREATE_ACCOUNT_SCREEN = 'Create Account';
+export const TRANSACTION_SCREEN = 'Transaction';
+export const HOME_SCREEN = 'Home';

@@ -20,7 +20,6 @@ const CreateAccountScreen = () => {
   const handleCreateAccount = async () => {
     try {
       const token = await AsyncStorage.getItem('token'); // Retrieve token from AsyncStorage
-      console.log(token);
       if (!token) {
         throw new Error('Token not found');
       }
@@ -40,9 +39,8 @@ const CreateAccountScreen = () => {
       );
 
       const data = response.data;
-      console.log(data); // Log success message or handle navigation as needed
-      navigation.navigate(routes.LOGIN_SCREEN); // Navigate to login screen after successful account creation
-    } catch (error) {
+      navigation.navigate(routes.HOME_SCREEN); // Navigate to login screen after successful account creation
+    } catch (error : any) {
       console.error('Error creating account:', error.message);
       Alert.alert('Account Creation Failed', 'Please check your credentials and try again.');
     }
