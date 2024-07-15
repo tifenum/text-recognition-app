@@ -5,6 +5,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigation/Navigator';
 import * as routes from '../navigation/routes';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type LoginScreenNavigationProps = StackNavigationProp<
   RootStackParamList,
@@ -18,13 +19,17 @@ const LoginScreen = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://192.168.1.18:3000/auth/login', {
+      const response = await axios.post('http://192.168.1.49:3000/auth/login', {
         email,
         password,
       });
 
       if (response.status === 200) {
-        navigation.navigate(routes.SELECT_SCREEN); // Navigate to SelectImageScreen on success
+        const token = response.data.token;
+
+        // Save token to AsyncStorage
+        await AsyncStorage.setItem('token', token);
+        navigation.navigate(routes.CREATE_ACCOUNT_SCREEN); // Navigate to SelectImageScreen on success
       } else {
         Alert.alert('Invalid credentials. Please try again.');
       }

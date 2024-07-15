@@ -9,6 +9,7 @@ import {ProcessImageScreen} from '../screens/ProcessImageScreen';
 import {RouteProp} from '@react-navigation/native';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
+import CreateAccountScreen from '../screens/CreateAccountScreen';
 
 export type RootStackParamList = {
   [routes.SELECT_SCREEN]: undefined;
@@ -17,6 +18,7 @@ export type RootStackParamList = {
   };
   [routes.LOGIN_SCREEN]: undefined;
   [routes.SIGNUP_SCREEN]: undefined;
+  [routes.CREATE_ACCOUNT_SCREEN]: undefined;
 };
 
 
@@ -51,6 +53,7 @@ export const Navigator = () => {
         name={routes.SELECT_SCREEN}
         component={SelectImageScreen}
       />
+      <Stack.Screen name={routes.CREATE_ACCOUNT_SCREEN} component={CreateAccountScreen}></Stack.Screen>
       <Stack.Screen
         name={routes.PROCESS_IMAGE_SCREEN}
         component={ProcessImageScreen}
